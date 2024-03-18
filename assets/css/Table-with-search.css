@@ -1,0 +1,28 @@
+body {
+  padding: 20px 20px;
+}
+
+.results tr[visible='false'], .no-result {
+  display: none;
+}
+
+.results tr[visible='true'] {
+  display: table-row;
+}
+
+.counter {
+  padding: 8px;
+  color: #ccc;
+}
+.results tr[visible='false'], .no-result {
+  display: none;
+}
+
+.counter {
+  padding: 8px;
+  color: #ccc;
+}
+
+.table-bordered{border:0px solid #ffffff00;}
+.table-bordered td,
+.table-bordered th{border: 0px solid #ffffff00;}
