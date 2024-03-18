@@ -1,0 +1,44 @@
+{
+  "main": "page1",
+  "pages": {
+    "page1": {
+      "jsonFile": "~page1.json",
+      "funcFile": "page1.js",
+      "name": "page1"
+    }
+  },
+  "plugins": [],
+  "theme": {
+    "primary": "",
+    "secondary": "",
+    "fontFile": ""
+  },
+  "autosave": false,
+  "activeDevice": "phone",
+  "devices": {
+    "phone": {
+      "width": 360,
+      "height": 680
+    },
+    "tablet": {
+      "width": 520,
+      "height": 840
+    },
+    "desktop": {
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "settings": {
+    "grid": {
+      "display": 0,
+      "row": 0.02,
+      "col": 0.02
+    },
+    "snapToGrid": false,
+    "portrait": true,
+    "experimentals": {
+      "codeEditor": true
+    }
+  }
+}

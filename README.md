@@ -1,1 +1,1 @@
-# EasyCall
+# AppStream

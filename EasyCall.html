@@ -1,32 +1,168 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <script src="ds:/Sys/app.js"></script>
-</head>
-	
-<script>
-    //Called after application is started.
-    function OnStart()
-    {
-        app.ShowPopup( "HTML Rocks!" );
-    }
-</script>
+     <script src='file:///android_asset/app.js'></script>
+    <title>Home</title>    
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=dd9a3406ee1490cc9025a6ee6f6cd274">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css?h=0c556d5438933bda409408695b5733e7">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css?h=0c556d5438933bda409408695b5733e7">  
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css?h=0c556d5438933bda409408695b5733e7">  
+    <link rel="stylesheet" href="assets/fonts/typicons.min.css?h=0c556d5438933bda409408695b5733e7">  
+    <link rel="stylesheet" href="assets/css/Bottom-Resonsive-Menu.css?h=cf4d3c8fbc4397eba2a4c5a8916d4f1e">  
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css?h=cabc25193678a4e8700df5b6f6e02b7c">    
+    <link rel="stylesheet" href="assets/ajax/animate.min.css">  
+    <link rel="stylesheet" href="assets/ajax/font-awesome.min.css">    
+    <link rel="stylesheet" href="assets/css/Table-with-search.css">
+    <script>  window.atob2 = atob;</script>            
+    <script  src="icon.js"></script>  
+    <script  src="assets/js/jquery.min.js?h=83e266cb1712b47c265f77a8f9e18451"></script>
+    <script  src="assets/bootstrap/js/bootstrap.min.js?h=7c038681746a729e2fff9520a575e78c"></script>
+    <script  src="assets/js/Table-with-search.js"></script>    
+    <script  src="assets/js/theme.js?h=417b03f5f0a4f9f27f8c248f532eb5af"></script>  
+    <script  src="Gvar.js"> </script>    
+    <script  src="controller.js"> </script>
+    <script  src="time.js"></script>    
+    <script  src="funzioni.js"> </script> 
+    <script  src="messaggi_notifica.js"></script>   
+    <script  src="select_tipo.js"> </script>
+    <script  src="status.js"> </script>  
+    <script  src="view.js"> </script>    
+    <script  src="test_conn.js"> </script>    
+    <script  src="aggiorna_db.js"> </script>        
+    <script  src="print_bt_80mm.js"></script>    
+    <script  src="print_bt_58mm.js"></script>    
+    <script  src="print_bluetooth.js"></script>    
+    <script  src="print_wifi.js"></script>
+    <script  src="geo.js"></script>    
+    
+    <link rel="stylesheet" href="assets/jquery-confirm/jquery-confirm.css">
+    <script src="assets/jquery-confirm/jquery-confirm.js"></script>
 
-<style>
-	body { background-color: #ffffff; }
-    .hello 
-    { 
-        font-size: 42; 
-        width: 100%;
-        margin-top: 2em;
-        text-align: center;
-        color: blue;
-    }
+     <script>
+    $(function(){
+    $('#counter-msg').hide()    
+    $("#xmain").hide()    
+    $('#rx_in_arrivo').show()
+    $('#rx_in_consegna').hide()
+    $('#rx_consegnato').hide()
+    $('#rx_annullato').hide()
+    $('#rx_storico').hide()
+    $('#rx_chiusura_cassa').hide()    
+    $('#qrcode').hide()    
+    $('#dettaglio-ordini-prodotti-header').hide()
+    $('#dettaglio-ordini-prodotti-body').hide()
+    $('#dettaglio-ordini-prodotti-footer').hide()    
+    $('#footer_in_arrivo').hide()
+    $('#footer_in_consegna').hide()
+    $('#footer_dettaglio').hide()
+    $('#footer_annullato').hide()
+    $('#footer_storico').hide()
+    $('#footer_chiusura_cassa').hide()
+    
+    if(dispositivo=="Tablet"){
+    var altezza_header="105px"
+    var font_size_header="29px"     
+     }
+    if(dispositivo=="Unico"){
+    var altezza_header="60px"
+    var font_size_header="18px"     
+     }
+ 
+       var wnav='<nav class="navbar navbar-light navbar-expand-lg '+ 
+'fixed-top  clean-navbar" id="color_banner_up" style="height:'+altezza_header+';">'+
+'<div class="container">'+
+'<a id="status"></a>'+
+'<a class="navbar-brand text-capitalize logo" href="#" '+ 
+'style="font-size: '+font_size_header+';color:#ffffff;margin-right: 21px;"'+
+'id="punti_azienda"></a>'+
+'<button style="background-color:#ffffff"; onclick=open_menu() '+ 
+'data-toggle="collapse" class="navbar-toggler" '+
+'data-target="#navcol-1">'+
+'<span class="sr-only">Toggle navigation</span>'+
+'<span class="navbar-toggler-icon"></span>'+
+'</button>'+
+'<div class="collapse navbar-collapse" '+
+'</div></div></nav>'
+
+  
+   $("body").prepend(wnav)
+   $("#color_banner_up").hide()    
+   iswifi=app.IsWifiEnabled();
+   if(iswifi){
+   app.ShowProgress( "Connessione AppStream  in corso... \n Attendere Prego...");
+   }else{
+   app.ShowPopup( "Wifi Spento" );
+   }})
+  
+    </script>
+    
+    <style>
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
 </style>
-
-<body onload="app.Start()">
-
-	<div class=hello> Hello World! </div>
-	
-</body>
-</html>
+    
+</head>
+<body  Onload="OnStart()">
+<main id="xmain" class="page landing-page" style="height: 100%;max-width:100%;width:100%;">
+<section class="clean-block about-us" style="margin-top: 35px;height: 100%;max-width:100%;width:100%;">
+<div class="container" style="border-style: none;padding-bottom: 18%;max-width:100%;width:100%;">        
+<div id="header_table" class="form-group pull-right">
+<!--input type="text"  id="insearch" class="search form-control"  placeholder="Search.."-->
+</div>
+<table class="table table-hover table-bordered results">
+<thead>
+</thead>
+    <tbody id="rx_in_arrivo"></tbody>
+    <tbody id="rx_in_consegna"></tbody>
+    <tbody id="rx_consegnato"></tbody>
+    <tbody id="rx_annullato"></tbody>
+    </table>
+       <div id="rx_chiusura_cassa"></div> 
+       <div id="doia-header"> </div>
+       <div id="doia-body"> </div>
+	   <div id="doia-aggiunte"> </div>
+       </div>
+       </section>
+         </main> 
+  <footer id="footer"></footer>        
+            
+              
+            
