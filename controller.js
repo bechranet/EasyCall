@@ -8,7 +8,7 @@
     var ll,r,data_print_wifi;
     var tempo_max_avvio_call,TIME_CHECK;
     
-
+/*    test */
         
 app.Script( "QRCode.js",true);
  
